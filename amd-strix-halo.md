@@ -1,9 +1,14 @@
 # System Specs
 * Framework Desktop Motherboard - AMD Ryzen AI Max 395+ 128Gb
-* Samsung 990 Pro 1Tb (Boot/Root) - ext4
-* Western Digital SN5000 4TB (Data) - zfs (8Gb ARC)
+  * 96GB set in BIOS for APU/GPU 
+* Samsung 990 Pro 1Tb (Boot/Root)
+  * ext4
+* Western Digital SN5000 4TB (Data)
+  * zfs (8Gb ARC)
 * Noctua NF-A12-25 G2 on CPU (push)
+  * 40% minimum until 60*c
 * Noctua NF-A12-25 G2 Case Fan (Intake)
+  * 40% minimum until 60*c
 * Jonbo C6-ITX Case
 * Corsair SF600 PSU
 
