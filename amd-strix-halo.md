@@ -36,7 +36,7 @@ services:
     ports:
       - "11434:11434"
     volumes:
-      - /mnt/llm/ollama-general:/root/.ollama
+      - /mnt/llm/ollama:/root/.ollama
     environment:
       - OLLAMA_HOST:0.0.0.0:11434      
       - OLLAMA_CONTEXT_LENGTH=8192
