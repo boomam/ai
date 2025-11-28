@@ -7,7 +7,7 @@
   * zfs (8Gb ARC)
 * Noctua NF-A12-25 G2 on CPU (push)
   * 40% minimum until 60*c
-* Noctua NF-A12-25 G2 Case Fan (Intake)
+* Noctua NF-A12-25 G2 Case Fan (Intake, bottom)
   * 40% minimum until 60*c
 * Jonbo C6-ITX Case
 * Corsair SF600 PSU
