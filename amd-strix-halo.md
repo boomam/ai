@@ -1,4 +1,5 @@
-# System Specs
+# System Specs  
+## Hardware  
 * Framework Desktop Motherboard - AMD Ryzen AI Max 395+ 128Gb
   * 96GB set in BIOS for APU/GPU 
 * Samsung 990 Pro 1Tb (Boot/Root)
@@ -12,16 +13,18 @@
 * Jonbo C6-ITX Case
 * Corsair SF600 PSU
 
-# Software Setup
+## Software Setup  
+_Always assumed to be latest releases at time of tests_  
 * Ubuntu 25.10
-* ROCM 7.1.0
-* Docker 29.0.4
+* ROCM x.x.x - versions per test run noted below
+* Docker x.x.x - versions per test run noted below
 * Additional Apps -
   * Patchmon Agent
   * Beszel Agent
   * Promtail
 
-# Ollama Deployment
+# Stack Deployment  
+## Ollama Deployment  
 Ollama docker compose -  
 
 ```yaml
@@ -55,7 +58,14 @@ networks:
     external: true      
 ```
 &nbsp;  
-
+## ROCM/AMD GPU Driver Installation.
+1. Full update Ubuntu.
+2. Check latest wget paths here: https://rocm.docs.amd.com/projects/install-on-linux/en/latest/install/quick-start.html
+3. `wget https://repo.radeon.com/amdgpu-install/7.1/ubuntu/noble/amdgpu-install_7.1.70100-1_all.deb`
+4. `apt install ./amdgpu-install_7.1.70100-1_all.deb -y`
+5. `amdgpu-install`
+6. `reboot now`
+   
 # Test Proceadure
 `docker exec -it ollama sh`  
 
@@ -67,9 +77,20 @@ First prompt: `hello` - not measured.
 Second prompt: `write a 1000 story about cats who are learning kubernetes`- measured  
 
 # Results
+## ROCM 7.1.0
+ROCM 7.1.0, Docker 29.0.4, Ollama 0.13.0
 
 | Model | Num Parameters | ROCM Prompt Eval Rate | ROCM Eval Rate | Vulkan Prompt Eval Rate | Vulkan Eval Rate |
 | ----- | ----- | ----- | ----- | ----- | ----- |
 | llama3.1 | 8B | 1165.34 | 35.75	|	780.07 | 41.87 |
 | llama3.1 | 70B | 154.05 | 4.32 | 88.94 | 5.05 |
 | gpt-oss | 120B | 246.79 | 33.88	| 331.36 | 32.73 |
+
+## ROCM 7.1.1
+ROCM 7.1.1, Docker 29.1.1, Ollama 0.13.0
+
+| Model | Num Parameters | ROCM Prompt Eval Rate | ROCM Eval Rate | Vulkan Prompt Eval Rate | Vulkan Eval Rate |
+| ----- | ----- | ----- | ----- | ----- | ----- |
+| llama3.1 | 8B |  | 	|	581.91 | 41.65 |
+| llama3.1 | 70B |  |  | 87.98 | 5.04 |
+| gpt-oss | 120B |  | 	| 361.93 | 32.91 |
