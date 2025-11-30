@@ -91,6 +91,6 @@ ROCM 7.1.1, Docker 29.1.1, Ollama 0.13.0
 
 | Model | Num Parameters | ROCM Prompt Eval Rate | ROCM Eval Rate | Vulkan Prompt Eval Rate | Vulkan Eval Rate |
 | ----- | ----- | ----- | ----- | ----- | ----- |
-| llama3.1 | 8B |  | 	|	581.91 | 41.65 |
-| llama3.1 | 70B |  |  | 87.98 | 5.04 |
-| gpt-oss | 120B |  | 	| 361.93 | 32.91 |
+| llama3.1 | 8B | 1126.20 | 35.41	|	581.91 | 41.65 |
+| llama3.1 | 70B | 151.34 | 4.35 | 87.98 | 5.04 |
+| gpt-oss | 120B | 284.13 | 33.70	| 361.93 | 32.91 |
